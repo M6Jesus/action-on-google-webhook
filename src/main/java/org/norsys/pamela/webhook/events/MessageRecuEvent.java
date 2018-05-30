@@ -1,5 +1,6 @@
 package org.norsys.pamela.webhook.events;
 
+import org.norsys.pamela.webhook.model.MessageGoogle;
 import org.springframework.context.ApplicationEvent;
 /**
  * ma classe qui si'occupe de mon evenement message
@@ -10,12 +11,12 @@ public class MessageRecuEvent extends ApplicationEvent{
 
 	private static final long serialVersionUID = 1L;
 
-	private String message;
-	public String getMessage() {
+	private MessageGoogle message;
+	public MessageGoogle getMessage() {
 		return message;
 	}
 
-	public MessageRecuEvent(Object source, String message) {
+	public MessageRecuEvent(Object source, MessageGoogle message) {
 		super(source);
 		// TODO Auto-generated constructor stub
 		this.message = message;
