@@ -115,7 +115,6 @@ public class MessageGoogleProcessor {
 			} else {
 				throw new MessageGoogleProcessorException("code contraire a HttpStatus 200");
 			}
-
 		} catch (Exception ex) {
 			logger.info("l'envoie du message a la destination  à rencontrer une exception ", ex.getMessage());
 			logger.debug("mesage non envoyer {}  :-(", message.getId());
@@ -126,7 +125,6 @@ public class MessageGoogleProcessor {
 
 	private void effacer(MessageGoogle message) {
 		messageGoogleRepository.deleteById(message.getId());
-
 	}
 
 }
