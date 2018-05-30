@@ -23,6 +23,6 @@ public interface DestinationApiRepository extends CrudRepository<DestinationApi,
 	@Modifying
 	@Transactional
 	@Query("update Destination d set d.enligne = false where d.id = ?")
-	int setDestinationApiOffline(long id);
+	int setDestinationApiOffline(long id) ;
 
 }

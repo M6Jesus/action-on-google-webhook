@@ -3,6 +3,7 @@ package org.norsys.pamela.webhook.persistance;
 import java.util.List;
 
 import org.norsys.pamela.webhook.model.MessageGoogle;
+import org.norsys.pamela.webhook.service.MessageGoogleProcessorException;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -25,6 +26,6 @@ public interface MessageGoogleRepository extends CrudRepository<MessageGoogle, L
 	@Modifying
 	@Transactional
 	@Query("select messageBody from message join destination on message.destination_id = destination.destinationid where message.destination_id= ?")
-	List<MessageGoogle> findAllMessageByDestination(long destinationId);
+	List<MessageGoogle> findAllMessageByDestination(long destinationId) throws MessageGoogleProcessorException;
 	
 }

@@ -74,6 +74,10 @@ public class MessageGoogle {
 		this.destination = destination;
 		this.timestamp = new Timestamp(System.currentTimeMillis());
 	}
+	public boolean isTimeOut() {
+		return this.timestamp.getTime() < System.currentTimeMillis() - MessageGoogle.MESSAGE_TIMEOUT;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
