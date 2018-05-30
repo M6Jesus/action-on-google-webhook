@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
  * @author panou
  *
  */
-@Entity
+@Entity(name = "message")
 public class MessageGoogle {
 	
 	static final long MESSAGE_TIMEOUT = 24 * 60 * 60 * 1000;
